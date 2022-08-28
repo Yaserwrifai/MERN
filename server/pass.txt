@@ -1,0 +1,20 @@
+yaser4rifai@gmail.com
+yaserfrifai
+
+KOxOkfhLzjzs9sOV
+MongoDB  password
+
+cloudinary
+dohicabzv
+
+development: 
+  cloud_name: "dohicabzv"
+  api_key: "467253524759594"
+  api_secret: "iqIc5JLQxburAZD_R1Oi7jUK1qs"
+  secure: true
+
+production:
+  cloud_name: "dohicabzv"
+  api_key: "467253524759594"
+  api_secret: "iqIc5JLQxburAZD_R1Oi7jUK1qs"
+  secure:true
