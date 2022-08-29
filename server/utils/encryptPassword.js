@@ -10,4 +10,10 @@ const encryptPassword = async (password) => {
     console.log("error hashing password", error);
   }
 };
-export default encryptPassword;
+
+const verifyPassword = async (pasword, hashedPassword) => {
+  const verified = await bcrypt.compare(pasword, hashedPassword);
+  console.log("verified", verified);
+  return verified;
+};
+export { encryptPassword, verifyPassword };

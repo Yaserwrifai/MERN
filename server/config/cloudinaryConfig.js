@@ -1,5 +1,3 @@
-//REVIEW[epic=demo, seq=10] 10. create config file for cloudinary
-
 import { v2 as cloudinary } from "cloudinary";
 
 const cloudinaryConfig = () => {

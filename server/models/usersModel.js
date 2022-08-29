@@ -1,4 +1,4 @@
-//REVIEW[epic=demo, seq=14] 14. Create the user model and export it.
+
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
