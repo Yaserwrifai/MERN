@@ -3,11 +3,12 @@ import cors from "cors";
 import * as dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
-import router from "./routes/testRoutes.js";
 import citiesRoute from "./routes/citiesRoute.js";
 import museumsRoute from "./routes/museumsRoute.js";
 import usersRoute from "./routes/usersRoute.js";
 import { cloudinaryConfig } from "./config/cloudinaryConfig.js";
+import passport from "passport";
+import { passportConfig } from "./config/passport.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -22,6 +23,8 @@ const addMiddleware = () => {
   app.use(cors());
   //REVIEW[epic=demo, seq=11] 11. Import cloudinary config function and call it with the other middlewares..
   cloudinaryConfig();
+  app.use(passport.initialize());
+  passportConfig(passport)
 };
 
 const startServer = () => {
@@ -40,7 +43,7 @@ const mongoBConnection = async () => {
 };
 
 const loadRoutes = () => {
-  app.use("/api/users", router);
+  //app.use("/api/users", router);
   app.use("/api/cities", citiesRoute);
   app.use("/api/museums", museumsRoute);
   //REVIEW[epic=demo, seq=1] 1.  create new route for users and import the usersRoute

@@ -102,5 +102,12 @@ const login = async (req, res) => {
     }
   }
 };
-
-export { uploadUserPicture, signUp, login };
+const getProfile=(req,res)=>{
+  console.log('req', req)
+  res.status(200).json({
+    email:req.user.email,
+    userName:req.user.userName,
+    avatarPicture:req.user.avatarPicture
+  })
+}
+export { uploadUserPicture, signUp, login, getProfile };
