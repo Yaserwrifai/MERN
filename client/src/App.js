@@ -8,9 +8,9 @@ function App() {
   const [user, setUser] = useState(false)
 
   const isUserLoggedIn = () => {
-    
+
     const token = getToken()
-    if(token) {
+    if (token) {
       setUser(true)
       console.log("You are ALREADY logged in")
     } else {
@@ -20,9 +20,9 @@ function App() {
   }
 
   useEffect(() => {
-    
-  isUserLoggedIn()
-   console.log(user);
+
+    isUserLoggedIn()
+    console.log(user);
   }, [user])
 
   const logout = () => {
@@ -30,16 +30,19 @@ function App() {
     setUser(false)
     console.log("you are logged out");
   }
-  
+
   return (
     <div className="App">
       <h1>MERN APPLICATION</h1>
-     
+
       <hr />
       <Register />
       <hr />
-      <Login /> 
+      <Login />
       <button onClick={logout} >logout</button>
+
+      //NOTE Build the Routing sistem. A route per view : : a route for the landing page, route for the list of cities, route for list museums/hotels, one for login, and one register.
+    
     </div>
   );
 }
