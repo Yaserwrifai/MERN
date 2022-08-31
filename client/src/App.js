@@ -9,9 +9,9 @@ function App() {
   const [user, setUser] = useState(false)
 
   const isUserLoggedIn = () => {
-    
+
     const token = getToken()
-    if(token) {
+    if (token) {
       setUser(true)
       console.log("you are ALREADY logged in")
     } else {
@@ -21,9 +21,9 @@ function App() {
   }
 
   useEffect(() => {
-    
-  isUserLoggedIn()
-   console.log(user);
+
+    isUserLoggedIn()
+    console.log(user);
   }, [user])
 
   const logout = () => {
@@ -31,17 +31,17 @@ function App() {
     setUser(false)
     console.log("you are logged out");
   }
-  
+
   return (
     <div className="App">
       <h1>Our wonderful APP</h1>
-      <button onClick={logout} style={{backgroundColor: "red"}}>logout</button>
+      <button onClick={logout} style={{ backgroundColor: "red" }}>logout</button>
       <hr />
       <Register />
       <hr />
       <Login />
       <hr />
-      <Profile/>
+      <Profile />
     </div>
   );
 }
